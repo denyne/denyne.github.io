@@ -1,4 +1,9 @@
-/* Reset a základy */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,172 +11,201 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f5f5f5;
+  font-family: 'Inter', sans-serif;
+  background: #fdfdfd;
   color: #333;
-  line-height: 1.6;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-body.dark {
-  background-color: #121212;
-  color: #f0f0f0;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 a {
-  color: inherit;
+  color: #3f51b5;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #1a237e;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
-/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
-  border-bottom: 2px solid #ccc;
+  padding: 20px 0;
   position: sticky;
   top: 0;
-  background-color: inherit;
-  z-index: 100;
+  background: #fff;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .logo {
   font-size: 1.8rem;
-  font-weight: bold;
-}
-
-.header-buttons {
-  display: flex;
-  gap: 0.5rem;
-}
-
-#darkModeToggle {
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: #222;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.2s;
-}
-
-#darkModeToggle:hover {
-  background-color: #444;
-}
-
-/* Navigace */
-nav {
-  display: flex;
-  gap: 1rem;
+  font-weight: 700;
+  color: #3f51b5;
 }
 
 nav a {
-  padding: 0.5rem;
-  transition: color 0.2s;
+  margin-left: 30px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 4px;
 }
 
-nav a.active {
-  font-weight: bold;
-  border-bottom: 2px solid #333;
+nav a.active::after,
+nav a:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #3f51b5;
 }
 
-body.dark nav a.active {
-  border-bottom: 2px solid #f0f0f0;
-}
-
-/* Hero */
 .hero {
-  padding: 4rem 0;
-  text-align: center;
+  padding: 80px 0;
+  text-align: left;
+  max-width: 700px;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #1a237e;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  color: #555;
+  margin-bottom: 30px;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
 .hero button {
-  padding: 0.7rem 1.5rem;
-  background-color: #333;
+  background: #3f51b5;
   color: #fff;
+  padding: 14px 36px;
   border: none;
-  border-radius: 8px;
+  border-radius: 30px;
   cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .hero button:hover {
-  background-color: #555;
+  background: #303f9f;
 }
 
-/* Sekce */
 section {
-  margin: 4rem 0;
+  padding: 80px 20px;
+  text-align: center;
+  margin: 0 10px 40px;
+  border-radius: 12px;
 }
 
 section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  color: #3f51b5;
+  margin-bottom: 20px;
 }
 
-/* Grid projektů */
+section p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: auto;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
-/* Karta projektu */
 .card {
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(63, 81, 181, 0.35);
+  color: #1a237e;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
-body.dark .card {
-  background-color: #1f1f1f;
-}
-
-/* Kontakt */
-#contact a {
-  color: #007acc;
-}
-
-/* Footer */
 footer {
+  padding: 50px 20px;
   text-align: center;
-  padding: 2rem 0;
+  color: #999;
   font-size: 0.9rem;
-  color: #888;
+  border-top: 1px solid #eee;
+  margin-top: 60px;
 }
 
-/* Animace */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.8s ease-out forwards;
+/* Dark mode */
+body.dark {
+  background: #121212;
+  color: #ccc;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+body.dark header {
+  background: #121212;
+  box-shadow: none;
+}
+
+body.dark .logo,
+body.dark nav a {
+  color: #3f51b5;
+}
+
+body.dark nav a.active::after,
+body.dark nav a:hover::after {
+  background: #3f51b5;
+}
+
+body.dark .hero h1,
+body.dark section h2 {
+  color: #3f51b5;
+}
+
+body.dark .hero p,
+body.dark section p {
+  color: #aaa;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+
+body.dark section,
+body.dark .card {
+  background: #1a1a1a;
+  color: #ccc;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+}
+
+body.dark footer {
+  color: #777;
+  border-color: #444;
+}
+
+/* Dark mode toggle button */
+#darkModeToggle {
+  background: transparent;
+  color: #3f51b5;
+  border: 2px solid #3f51b5;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#darkModeToggle:hover {
+  background-color: #3f51b5;
+  color: white;
 }
