@@ -185,7 +185,9 @@ body.dark section,
 body.dark .card {
   background: #1a1a1a;
   color: #ccc;
-  box-shadow: 0 8px 25px rgba(63, 81, 181, 0.5);
+  box-shadow:
+  0 4px 6px rgba(63, 81, 181, 0.5),  
+  0 8px 25px rgba(63, 81, 181, 0.8);
 }
 
 body.dark footer {
