@@ -2,64 +2,62 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Deny - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
   <div class="container">
     <header>
       <div class="logo">Deny</div>
       <nav>
-        <a href="#about" class="active">O mně</a>
+        <a href="#aboutSection" class="active">O mně</a>
         <a href="#skills">Dovednosti</a>
         <a href="#projects">Projekty</a>
         <a href="#contact">Kontakt</a>
       </nav>
-      <div class="controls">
-        <button id="darkModeToggle">Dark mode</button>
-      </div>
+      <button id="darkModeToggle">Dark mode</button>
     </header>
 
-    <div class="hero" id="about">
+    <div class="hero fade-in" id="about">
       <h1>Ahoj, vítej na mojem webu</h1>
       <p>Tvořím moderní a responzivní weby s důrazem na design, jednoduchost a funkčnost.</p>
       <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Kontaktuj mě</button>
     </div>
 
-    <section id="aboutSection">
+    <section id="aboutSection" class="fade-in">
       <h2>O mně</h2>
-      <p>Jsem nadšený tvůrce webů, který se věnuje designu, přístupnosti a jednoduchosti. Mám rád čistý a efektivní kód, který přináší výsledky.</p>
+      <p>Jsem nadšený tvůrce webových stránek, který se zaměřuje na přehledný design, použitelnost a moderní technologie.</p>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="fade-in">
       <h2>Moje dovednosti</h2>
       <p>Webdesign, HTML, CSS, Python.</p>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="fade-in">
       <h2>Vybrané projekty</h2>
       <div class="grid">
-        <div class="card">
+        <div class="card fade-in">
           <h3>Portfolio stránka</h3>
           <p>Moderní osobní web postavený čistě v HTML a CSS s animacemi a přehledným layoutem.</p>
         </div>
-        <div class="card">
+        <div class="card fade-in">
           <h3>Startup Landing Page</h3>
           <p>Design pro startup – elegantní, navržen pro konverze.</p>
         </div>
-        <div class="card">
+        <div class="card fade-in">
           <h3>Interaktivní kvíz</h3>
           <p>Projekt s otázkami, skórováním a UX prvky, který je vytvořen v Pythonu.</p>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="fade-in">
       <h2>Kontakt</h2>
       <p><a href="mailto:tvoje@email.cz">tvoje@email.cz</a></p>
-      <p>Telefon: +420 123 456 789</p>
+      <p>Telefon: +420 123 456 789</p>
       <p><a href="https://github.com/denyne" target="_blank">GitHub</a></p>
     </section>
   </div>
@@ -69,7 +67,7 @@
   </footer>
 
   <script>
-    // Aktivní sekce v menu
+    // Aktivní odkaz v navigaci
     const sections = document.querySelectorAll('section, .hero');
     const navLinks = document.querySelectorAll('nav a');
     window.addEventListener('scroll', () => {
