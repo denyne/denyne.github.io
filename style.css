@@ -151,50 +151,22 @@ footer {
 
 /* Dark mode */
 body.dark {
-  background: #121212;
+  background-color: #121212;
   color: #ccc;
 }
 
-body.dark header {
-  background: #121212;
-  box-shadow: none;
-}
-
-body.dark .logo,
-body.dark nav a {
-  color: #3f51b5;
-}
-
-body.dark nav a.active::after,
-body.dark nav a:hover::after {
-  background: #3f51b5;
-}
-
-body.dark .hero h1,
-body.dark section h2 {
-  color: #3f51b5;
-}
-
-body.dark .hero p,
-body.dark section p {
-  color: #aaa;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
-}
-
+body.dark header,
 body.dark section,
-body.dark .card {
-  background: #1a1a1a;
-  color: #ccc;
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
-}
-
+body.dark .card,
 body.dark footer {
-  color: #777;
-  border-color: #444;
+  background-color: #121212;
+  color: #ccc;
+  box-shadow: none;
+  border: none;
 }
 
-/* Dark mode toggle button */
-#darkModeToggle {
+/* Dark mode tlačítka (dark mode toggle a deny) */
+#darkModeToggle, #deny {
   background: transparent;
   color: #3f51b5;
   border: 2px solid #3f51b5;
@@ -203,22 +175,22 @@ body.dark footer {
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.3s ease, color 0.3s ease;
+  margin-right: 10px;
 }
 
-#darkModeToggle:hover {
-  background-color: #3f51b5;
+#darkModeToggle:hover, #deny:hover {
+  background-color: #303f9f;
   color: white;
 }
-/* Animace při načtení stránky */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out forwards;
+
+body.dark #darkModeToggle,
+body.dark #deny {
+  color: #7986cb;
+  border-color: #7986cb;
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+body.dark #darkModeToggle:hover,
+body.dark #deny:hover {
+  background-color: #303f9f;
+  color: white;
 }
