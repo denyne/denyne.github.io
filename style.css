@@ -52,12 +52,6 @@ header {
   color: #3f51b5;
 }
 
-/* Tlačítka Deny a Dark mode vedle sebe */
-.controls {
-  display: flex;
-  gap: 10px;
-}
-
 nav a {
   margin-left: 30px;
   font-weight: 600;
@@ -214,32 +208,4 @@ body.dark footer {
 #darkModeToggle:hover {
   background-color: #3f51b5;
   color: white;
-}
-
-/* Tlačítko Deny vedle Dark mode */
-#deny {
-  background: transparent;
-  color: #3f51b5;
-  border: 2px solid #3f51b5;
-  padding: 10px 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#deny:hover {
-  background-color: #3f51b5;
-  color: white;
-}
-
-/* Dark mode styl pro tlačítko Deny */
-body.dark #deny {
-  color: #7986cb;
-  border-color: #7986cb;
-}
-
-body.dark #deny:hover {
-  background-color: #7986cb;
-  color: #121212;
 }
