@@ -20,40 +20,60 @@
       <button id="darkModeToggle">Dark mode</button>
     </header>
 
-    <div class="hero" id="about" style="text-align: left;">
-      <h1>Ahoj, vítej na mojem webu</h1>
-      <p>Tvořím moderní a responzivní weby s důrazem na design, jednoduchost a funkčnost.</p>
-      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Kontaktuj mě</button>
+    <!-- Jazyková volba -->
+    <section id="language" class="language-switcher">
+      <button onclick="changeLanguage('cz')" class="lang-btn active">CZ</button>
+      <button onclick="changeLanguage('en')" class="lang-btn">EN</button>
+    </section>
+
+    <!-- O mně -->
+    <div class="hero" id="about">
+      <h1 data-cz="Ahoj, vítej na mojem webu" data-en="Hi, welcome to my website">Ahoj, vítej na mojem webu</h1>
+      <p data-cz="Tvořím moderní a responzivní weby s důrazem na design, jednoduchost a funkčnost."
+         data-en="I create modern and responsive websites focusing on design, simplicity, and functionality.">
+        Tvořím moderní a responzivní weby s důrazem na design, jednoduchost a funkčnost.
+      </p>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-cz="Kontaktuj mě" data-en="Contact me">
+        Kontaktuj mě
+      </button>
     </div>
 
     <section id="skills">
-      <h2>Moje dovednosti</h2>
-      <p>Webdesign, HTML, CSS, Python.</p>
-      <p><strong>Angličtina:</strong> středně pokročilá (B1)</p>
+      <h2 data-cz="Moje dovednosti" data-en="My Skills">Moje dovednosti</h2>
+      <p data-cz="Webdesign, HTML, CSS, Python." data-en="Web design, HTML, CSS, Python.">Webdesign, HTML, CSS, Python.</p>
     </section>
 
     <section id="projects">
-      <h2>Vybrané projekty</h2>
+      <h2 data-cz="Vybrané projekty" data-en="Selected Projects">Vybrané projekty</h2>
       <div class="grid">
         <div class="card">
-          <h3>Portfolio stránka</h3>
-          <p>Moderní osobní web postavený čistě v HTML a CSS s animacemi a přehledným layoutem.</p>
+          <h3 data-cz="Portfolio stránka" data-en="Portfolio Website">Portfolio stránka</h3>
+          <p data-cz="Moderní osobní web postavený čistě v HTML a CSS s animacemi a přehledným layoutem."
+             data-en="Modern personal website built purely in HTML and CSS with animations and a clean layout.">
+            Moderní osobní web postavený čistě v HTML a CSS s animacemi a přehledným layoutem.
+          </p>
         </div>
         <div class="card">
-          <h3>Startup Landing Page</h3>
-          <p>Design pro startup – elegantní, navržen pro konverze.</p>
+          <h3 data-cz="Startup Landing Page" data-en="Startup Landing Page">Startup Landing Page</h3>
+          <p data-cz="Design pro startup – elegantní, navržen pro konverze."
+             data-en="Design for a startup – elegant and designed for conversions.">
+            Design pro startup – elegantní, navržen pro konverze.
+          </p>
         </div>
         <div class="card">
-          <h3>Interaktivní kvíz</h3>
-          <p>Projekt s otázkami, skórováním a UX prvky, který je vytvořen v Pythonu.</p>
+          <h3 data-cz="Interaktivní kvíz" data-en="Interactive Quiz">Interaktivní kvíz</h3>
+          <p data-cz="Projekt s otázkami, skórováním a UX prvky, který je vytvořen v Pythonu."
+             data-en="Project with questions, scoring and UX features, built in Python.">
+            Projekt s otázkami, skórováním a UX prvky, který je vytvořen v Pythonu.
+          </p>
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <h2>Kontakt</h2>
+      <h2 data-cz="Kontakt" data-en="Contact">Kontakt</h2>
       <p><a href="mailto:tvoje@email.cz">tvoje@email.cz</a></p>
-      <p>Telefon: +420 123 456 789</p>
+      <p data-cz="Telefon: +420 123 456 789" data-en="Phone: +420 123 456 789">Telefon: +420 123 456 789</p>
       <p><a href="https://github.com/denyne" target="_blank">GitHub</a></p>
     </section>
   </div>
@@ -63,6 +83,21 @@
   </footer>
 
   <script>
+    // Jazyková volba (CZ/EN)
+    function changeLanguage(lang) {
+      document.querySelectorAll('[data-cz]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+
+      // Aktivní tlačítko
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+    }
+
+    // Výchozí jazyk
+    changeLanguage('cz');
+
     // Scroll aktivní linky v menu
     const sections = document.querySelectorAll('section, .hero');
     const navLinks = document.querySelectorAll('nav a');
@@ -85,11 +120,6 @@
       } else {
         toggleBtn.textContent = 'Dark mode';
       }
-    });
-
-    // Refresh stránky po kliknutí na logo
-    document.querySelector('.logo').addEventListener('click', () => {
-      location.reload();
     });
   </script>
 </body>
