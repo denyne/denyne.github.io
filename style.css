@@ -162,17 +162,17 @@ body.dark header {
 
 body.dark .logo,
 body.dark nav a {
-  color: #3f51b5;
+  color: #1a1a1a;
 }
 
 body.dark nav a.active::after,
 body.dark nav a:hover::after {
-  background: #3f51b5;
+  background: #1a1a1a;
 }
 
 body.dark .hero h1,
 body.dark section h2 {
-  color: #3f51b5;
+  color: #1a1a1a;
 }
 
 body.dark .hero p,
