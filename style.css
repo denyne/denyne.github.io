@@ -52,7 +52,6 @@ header {
   font-weight: 700;
   color: #3f51b5;
   transition: color 0.5s ease;
-  cursor: pointer;
 }
 
 nav a {
@@ -93,7 +92,6 @@ nav a:hover::after {
   font-size: 3rem;
   margin-bottom: 20px;
   color: #1a237e;
-  text-shadow: 0 0 3px rgba(63,81,181,0.8);
   transition: color 0.5s ease;
 }
 
@@ -104,164 +102,170 @@ nav a:hover::after {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  text-shadow: 0 0 2px rgba(0,0,0,0.1);
   transition: color 0.5s ease, text-shadow 0.5s ease;
 }
 
 .hero button {
   background: #3f51b5;
   color: #fff;
-  padding: 14px 36px;
   border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
   border-radius: 30px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 6px 15px rgb(63 81 181 / 0.35);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hero button:hover {
-  background: #303f9f;
+  background: #1a237e;
+  box-shadow: 0 8px 20px rgb(26 35 126 / 0.6);
 }
 
 section {
-  padding: 80px 20px;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s ease forwards;
-  margin: 0 10px 40px;
-  border-radius: 12px;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  margin-bottom: 70px;
 }
 
 section h2 {
-  font-size: 2.4rem;
-  color: #3f51b5;
-  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #1a237e;
   transition: color 0.5s ease;
+  text-align: center;
 }
 
 section p {
   font-size: 1.1rem;
+  text-align: center;
   color: #555;
   max-width: 700px;
-  margin: auto;
-  text-shadow: 0 0 2px rgba(0,0,0,0.1);
-  transition: color 0.5s ease, text-shadow 0.5s ease;
+  margin-left: auto;
+  margin-right: auto;
+  transition: color 0.5s ease;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
   gap: 30px;
-  margin-top: 40px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .card {
   background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(63,81,181,0.35);
-  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
-  color: #1a237e;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease, background-color 0.5s ease, color 0.5s ease;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #3f51b5;
+}
+
+.card p {
+  color: #555;
 }
 
 footer {
-  padding: 50px 20px;
+  padding: 20px 0;
   text-align: center;
-  color: #999;
+  color: #777;
   font-size: 0.9rem;
-  border-top: 1px solid #eee;
-  margin-top: 60px;
-  transition: color 0.5s ease, border-color 0.5s ease;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media(max-width: 768px) {
-  nav a {
-    margin-left: 15px;
-  }
-
-  .hero h1 {
-    font-size: 2.4rem;
-  }
-}
-
-/* Dark mode styles */
-body.dark {
-  background: #121212;
-  color: #3f51b5;
+  background: #f5f5f5;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-body.dark header {
-  background: #121212;
-  box-shadow: none;
+/* Jazyková volba */
+.language-switcher {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-body.dark .logo,
-body.dark nav a {
-  color: #3f51b5;
+.lang-btn {
+  background: #3f51b5;
+  color: white;
+  border: none;
+  margin: 0 8px;
+  padding: 10px 22px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lang-btn:hover {
+  background: #1a237e;
+}
+
+.lang-btn.active {
+  background: #1a237e;
+}
+
+/* Dark mode */
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark a {
+  color: #bb86fc;
+}
+
+body.dark a:hover {
+  color: #3700b3;
+}
+
+body.dark header {
+  background: #1f1f1f;
+}
+
+body.dark .logo {
+  color: #bb86fc;
 }
 
 body.dark nav a.active::after,
 body.dark nav a:hover::after {
-  background: #3f51b5;
+  background: #bb86fc;
 }
 
 body.dark .hero h1 {
-  color: #3f51b5;
-  text-shadow: 0 0 5px rgba(63,81,181,0.9);
+  color: #bb86fc;
 }
 
-/* Zvýrazněný podtext v dark modu (hero + sekce) */
 body.dark .hero p,
-body.dark section p {
-  color: #aaa;
-  text-shadow: 0 0 3px rgba(0,0,0,0.6);
-  transition: color 0.5s ease, text-shadow 0.5s ease;
+body.dark section p,
+body.dark .card p,
+body.dark footer {
+  color: #bbb;
 }
 
-body.dark section {
-  background: #121212;
-  color: #3f51b5;
-  box-shadow: none;
-}
-
-body.dark section h2 {
-  color: #3f51b5;
+body.dark section h2,
+body.dark .card h3 {
+  color: #bb86fc;
 }
 
 body.dark .card {
-  background: #121212;
-  box-shadow: 0 8px 20px rgba(255,255,255,0.05);
-  color: #3f51b5;
+  background: #1f1f1f;
+  box-shadow: 0 5px 15px rgba(187,134,252,0.3);
 }
 
 body.dark footer {
-  color: #777;
-  border-color: #444;
+  background: #121212;
 }
 
-/* Toggle button */
-#darkModeToggle {
-  background: transparent;
-  color: #3f51b5;
-  border: 2px solid #3f51b5;
-  padding: 10px 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#darkModeToggle:hover {
-  background-color: #3f51b5;
-  color: white;
+/* Animace fadeUp */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
