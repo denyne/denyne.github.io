@@ -19,21 +19,19 @@
       </nav>
       <div class="controls">
         <button id="darkModeToggle">Dark mode</button>
+        <button id="langToggle">EN</button>
       </div>
     </header>
 
     <div class="hero" id="about">
       <h1>Ahoj, vítej na mojem webu</h1>
       <p>Tvořím moderní a responzivní weby s důrazem na design, jednoduchost a funkčnost.</p>
-      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-        Kontaktuj mě
-      </button>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Kontaktuj mě</button>
     </div>
 
-    <!-- NOVÁ SEKCE O MNĚ -->
-    <section id="aboutMe">
+    <section id="aboutSection">
       <h2>O mně</h2>
-      <p>Jsem nadšenec do webdesignu a programování, který rád tvoří jednoduché, ale moderní weby s přehlednou strukturou. Věnuji se HTML, CSS a Pythonu, a neustále se učím nové technologie.</p>
+      <p>Jsem nadšený tvůrce webů, který se věnuje designu, přístupnosti a jednoduchosti. Mám rád čistý a efektivní kód, který přináší výsledky.</p>
     </section>
 
     <section id="skills">
@@ -63,9 +61,7 @@
       <h2>Kontakt</h2>
       <p><a href="mailto:tvoje@email.cz">tvoje@email.cz</a></p>
       <p>Telefon: +420 123 456 789</p>
-      <p>
-        <a href="https://github.com/denyne" target="_blank">GitHub</a>
-      </p>
+      <p><a href="https://github.com/denyne" target="_blank">GitHub</a></p>
     </section>
   </div>
 
@@ -74,7 +70,7 @@
   </footer>
 
   <script>
-    // Aktivní odkaz při scrollu
+    // Sekce aktivní menu
     const sections = document.querySelectorAll('section, .hero');
     const navLinks = document.querySelectorAll('nav a');
     window.addEventListener('scroll', () => {
@@ -87,11 +83,17 @@
       });
     });
 
-    // Přepínač dark/light
+    // Dark mode toggle
     const toggleBtn = document.getElementById('darkModeToggle');
     toggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark');
       toggleBtn.textContent = document.body.classList.contains('dark') ? 'Light mode' : 'Dark mode';
+    });
+
+    // Jazykový toggle
+    const langBtn = document.getElementById('langToggle');
+    langBtn.addEventListener('click', () => {
+      alert("Přepínání jazyka zatím není aktivní – bude brzy doplněno.");
     });
   </script>
 </body>
