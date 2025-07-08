@@ -181,13 +181,16 @@ body.dark section p {
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
 }
 
-body.dark section,
+body.dark section {
+  background: #121212;
+  color: #ccc;
+}
+
 body.dark .card {
   background: #1a1a1a;
   color: #ccc;
   box-shadow:
-  0 4px 6px rgba(63, 81, 181, 0.5),  
-  0 8px 25px rgba(63, 81, 181, 0.8);
+    0 8px 25px rgba(63, 81, 181, 0.5);
 }
 
 body.dark footer {
