@@ -18,6 +18,7 @@
         <a href="#contact">Kontakt</a>
       </nav>
       <div class="controls">
+        <button id="deny">Deny</button>
         <button id="darkModeToggle">Dark mode</button>
       </div>
     </header>
@@ -93,7 +94,11 @@
       document.body.classList.toggle('dark');
       toggleBtn.textContent = document.body.classList.contains('dark') ? 'Light mode' : 'Dark mode';
     });
+
+    // Tlačítko Deny - refresh stránky
+    document.getElementById('deny').addEventListener('click', () => {
+      location.reload();
+    });
   </script>
 </body>
 </html>
-
