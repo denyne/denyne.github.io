@@ -43,7 +43,7 @@ header {
   top: 0;
   background: #fff;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: background-color 0.5s ease;
 }
 
@@ -52,7 +52,6 @@ header {
   font-weight: 700;
   color: #3f51b5;
   transition: color 0.5s ease;
-  cursor: pointer;
 }
 
 nav a {
@@ -83,17 +82,10 @@ nav a:hover::after {
   transition: color 0.5s ease;
 }
 
-@media(max-width: 768px) {
-  .hero {
-    text-align: center;
-  }
-}
-
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 20px;
   color: #1a237e;
-  text-shadow: 0 0 3px rgba(63,81,181,0.8);
   transition: color 0.5s ease;
 }
 
@@ -104,7 +96,6 @@ nav a:hover::after {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  text-shadow: 0 0 2px rgba(0,0,0,0.1);
   transition: color 0.5s ease, text-shadow 0.5s ease;
 }
 
@@ -146,7 +137,6 @@ section p {
   color: #555;
   max-width: 700px;
   margin: auto;
-  text-shadow: 0 0 2px rgba(0,0,0,0.1);
   transition: color 0.5s ease, text-shadow 0.5s ease;
 }
 
@@ -161,7 +151,7 @@ section p {
   background: #fff;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(63,81,181,0.35);
+  box-shadow: 0 8px 25px rgba(63, 81, 181, 0.35);
   transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
   color: #1a237e;
 }
@@ -183,7 +173,7 @@ footer {
   }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   nav a {
     margin-left: 15px;
   }
@@ -191,9 +181,13 @@ footer {
   .hero h1 {
     font-size: 2.4rem;
   }
+
+  .hero {
+    text-align: center;
+  }
 }
 
-/* Dark mode styles */
+/* DARK MODE */
 body.dark {
   background: #121212;
   color: #3f51b5;
@@ -217,21 +211,28 @@ body.dark nav a:hover::after {
 
 body.dark .hero h1 {
   color: #3f51b5;
-  text-shadow: 0 0 5px rgba(63,81,181,0.9);
 }
 
-/* Zvýrazněný podtext v dark modu (hero + sekce) */
+/* Zvýraznění textu v dark režimu */
 body.dark .hero p,
 body.dark section p {
   color: #aaa;
-  text-shadow: 0 0 3px rgba(0,0,0,0.6);
-  transition: color 0.5s ease, text-shadow 0.5s ease;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Nadpisy v dark režimu - MODRÉ */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6 {
+  color: #3f51b5;
 }
 
 body.dark section {
   background: #121212;
   color: #3f51b5;
-  box-shadow: none;
 }
 
 body.dark section h2 {
@@ -240,7 +241,7 @@ body.dark section h2 {
 
 body.dark .card {
   background: #121212;
-  box-shadow: 0 8px 20px rgba(255,255,255,0.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
   color: #3f51b5;
 }
 
@@ -249,8 +250,9 @@ body.dark footer {
   border-color: #444;
 }
 
-/* Toggle button */
-#darkModeToggle {
+/* Tlačítka */
+#darkModeToggle,
+#langToggle {
   background: transparent;
   color: #3f51b5;
   border: 2px solid #3f51b5;
@@ -261,7 +263,9 @@ body.dark footer {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#darkModeToggle:hover {
+#darkModeToggle:hover,
+#langToggle:hover {
   background-color: #3f51b5;
   color: white;
 }
+
