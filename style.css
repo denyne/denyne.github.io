@@ -43,13 +43,16 @@ header {
   top: 0;
   background: #fff;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: background-color 0.5s ease;
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
   color: #3f51b5;
+  transition: color 0.5s ease;
+  cursor: pointer;
 }
 
 nav a {
@@ -57,6 +60,7 @@ nav a {
   font-weight: 600;
   position: relative;
   padding-bottom: 4px;
+  transition: color 0.5s ease;
 }
 
 nav a.active::after,
@@ -68,25 +72,40 @@ nav a:hover::after {
   width: 100%;
   height: 2px;
   background: #3f51b5;
+  transition: background-color 0.5s ease;
 }
 
 .hero {
   padding: 80px 0;
+  animation: fadeUp 0.8s ease forwards;
   text-align: left;
   max-width: 700px;
+  transition: color 0.5s ease;
+}
+
+@media(max-width: 768px) {
+  .hero {
+    text-align: center;
+  }
 }
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 20px;
   color: #1a237e;
+  text-shadow: 0 0 3px rgba(63,81,181,0.8);
+  transition: color 0.5s ease;
 }
 
 .hero p {
   font-size: 1.2rem;
   color: #555;
   margin-bottom: 30px;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 0 2px rgba(0,0,0,0.1);
+  transition: color 0.5s ease, text-shadow 0.5s ease;
 }
 
 .hero button {
@@ -107,14 +126,19 @@ nav a:hover::after {
 section {
   padding: 80px 20px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
   margin: 0 10px 40px;
   border-radius: 12px;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 section h2 {
   font-size: 2.4rem;
   color: #3f51b5;
   margin-bottom: 20px;
+  transition: color 0.5s ease;
 }
 
 section p {
@@ -122,7 +146,8 @@ section p {
   color: #555;
   max-width: 700px;
   margin: auto;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0 2px rgba(0,0,0,0.1);
+  transition: color 0.5s ease, text-shadow 0.5s ease;
 }
 
 .grid {
@@ -136,7 +161,8 @@ section p {
   background: #fff;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(63, 81, 181, 0.35);
+  box-shadow: 0 8px 25px rgba(63,81,181,0.35);
+  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
   color: #1a237e;
 }
 
@@ -147,12 +173,31 @@ footer {
   font-size: 0.9rem;
   border-top: 1px solid #eee;
   margin-top: 60px;
+  transition: color 0.5s ease, border-color 0.5s ease;
 }
 
-/* Dark mode */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media(max-width: 768px) {
+  nav a {
+    margin-left: 15px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Dark mode styles */
 body.dark {
   background: #121212;
-  color: #ccc;
+  color: #3f51b5;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 body.dark header {
@@ -170,22 +215,33 @@ body.dark nav a:hover::after {
   background: #3f51b5;
 }
 
-body.dark .hero h1,
+body.dark .hero h1 {
+  color: #3f51b5;
+  text-shadow: 0 0 5px rgba(63,81,181,0.9);
+}
+
+/* Zvýrazněný podtext v dark modu (hero + sekce) */
+body.dark .hero p,
+body.dark section p {
+  color: #aaa;
+  text-shadow: 0 0 3px rgba(0,0,0,0.6);
+  transition: color 0.5s ease, text-shadow 0.5s ease;
+}
+
+body.dark section {
+  background: #121212;
+  color: #3f51b5;
+  box-shadow: none;
+}
+
 body.dark section h2 {
   color: #3f51b5;
 }
 
-body.dark .hero p,
-body.dark section p {
-  color: #aaa;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
-}
-
-body.dark section,
 body.dark .card {
-  background: #1a1a1a;
-  color: #ccc;
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+  background: #121212;
+  box-shadow: 0 8px 20px rgba(255,255,255,0.05);
+  color: #3f51b5;
 }
 
 body.dark footer {
@@ -193,7 +249,7 @@ body.dark footer {
   border-color: #444;
 }
 
-/* Dark mode toggle button */
+/* Toggle button */
 #darkModeToggle {
   background: transparent;
   color: #3f51b5;
